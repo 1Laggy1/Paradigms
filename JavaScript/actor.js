@@ -36,7 +36,10 @@ class Point {
     this.#processing = true;
     while (this.#queue.length) {
       const { method, x, y, resolve } = this.#queue.shift();
-      if (method === 'move') resolve(this.#move(x, y));
+      if (method === 'move') {
+        this.#move(x, y);
+        resolve(this.#toString());
+      }
       if (method === 'clone') resolve(this.#clone());
       if (method === 'toString') resolve(this.#toString());
     }

@@ -1,18 +1,16 @@
 'use strict';
 
-const createPoint = (x, y) => {
-  const point = { x, y };
-  return point;
-};
+const createPoint = (x, y) => ({ x, y });
 
 const clone = (point) => {
   const { x, y } = point;
   return createPoint(x, y);
 };
 
-const move = (point, x, y) => {
-  point.x += x;
-  point.y += y;
+const move = (point, dx, dy) => {
+  point.x += dx;
+  point.y += dy;
+  return point;
 };
 
 const toString = (point) => {

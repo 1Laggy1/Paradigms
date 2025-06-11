@@ -2,7 +2,7 @@
 
 const createPoint = (x, y) => Object.freeze({ x, y });
 const move = ({ x, y }, dx, dy) => createPoint(x + dx, y + dy);
-const clone = (point) => createPoint(point.x, point.y);
+const clone = (point) => point;
 const toString = (point) => `(${point.x}, ${point.y})`;
 
 // Usage

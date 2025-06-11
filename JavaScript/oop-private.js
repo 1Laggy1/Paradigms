@@ -4,14 +4,18 @@ class Point {
   #x;
   #y;
 
-  constructor(x, y) {
-    this.#x = x;
-    this.#y = y;
+  constructor(dx, dy) {
+    this.#x = dx;
+    this.#y = dy;
   }
 
-  move(x, y) {
-    this.#x += x;
-    this.#y += y;
+  getX() { return this.#x; }
+
+  getY() { return this.#y; }
+
+  move(dx, dy) {
+    this.#x += dx;
+    this.#y += dy;
   }
 
   clone() {

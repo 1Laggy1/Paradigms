@@ -1,22 +1,24 @@
 'use strict';
 
-function Point(x, y) {
-  this.x = x;
-  this.y = y;
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  clone() {
+    return new Point(this.x, this.y);
+  }
+
+  move(x, y) {
+    this.x += x;
+    this.y += y;
+  }
+
+  toString() {
+    return `(${this.x}, ${this.y})`;
+  }
 }
-
-Point.prototype.clone = function () {
-  return new Point(this.x, this.y);
-};
-
-Point.prototype.move = function (x, y) {
-  this.x += x;
-  this.y += y;
-};
-
-Point.prototype.toString = function () {
-  return `(${this.x}, ${this.y})`;
-};
 
 // Usage
 
